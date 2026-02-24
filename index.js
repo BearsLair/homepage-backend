@@ -1,12 +1,22 @@
-import axios from "axios";
-import http from "node:http";
-import fs from "fs";
+const http = require("http");
+const fs = require("fs");
 
 const PORT = 8080;
 
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+  fs.readFile("index.html", "utf-8", (err, data) => {
+    res.writeHead(200, { "Content-Type": "text/html" });
 
-axios.get("/").then((res) => {});
+    if (err) {
+      console.log(err);
+      return;
+    }
+    // res.end goes inside readFile method
+    res.end(data);
+  });
+});
 
-console.log("Server Running on Port 8080");
-server.listen(PORT);
+// Note to self: Remember to put the port in the parentheses, idiot!!!
+server.listen(PORT, () => {
+  console.log(`Server Running on Port ${PORT}`);
+});
