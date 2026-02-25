@@ -27,7 +27,6 @@ const server = http.createServer((req, res) => {
         console.log(err);
         return;
       }
-      // res.end goes inside readFile method
       res.end(data);
     });
   } else if (req.url === "/contact-me" && req.method === "GET") {
@@ -38,7 +37,6 @@ const server = http.createServer((req, res) => {
         console.log(err);
         return;
       }
-      // res.end goes inside readFile method
       res.end(data);
     });
   } else {
@@ -49,7 +47,6 @@ const server = http.createServer((req, res) => {
         console.log(err);
         return;
       }
-      // res.end goes inside readFile method
       res.end(data);
     });
   }
