@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/BearsLair/homepage-backend/issues"
   },
-  "homepage": "https://github.com/BearsLair/homepage-backend#readme"
+  "homepage": "https://github.com/BearsLair/homepage-backend#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
